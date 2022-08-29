@@ -1,0 +1,19 @@
+{
+  "name": "blog-website",
+  "version": "1.0.0",
+  "description": "Blog Website to learn MERN stack",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon"
+  },
+  "keywords": [],
+  "author": "Devi Sri Charan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "nodemon": "^2.0.19"
+  }
+}
