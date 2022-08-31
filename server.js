@@ -21,8 +21,8 @@ app.get('/api/articles/:name', async (req, res) => {
     withDB(async (db) => {
         const articleName = req.params.name;
 
-        const articlesInfo = await db.
-            collection('articles')
+        const articlesInfo = await db
+            .collection('articles')
             .findOne({ name: articleName });
         res.status(200).json(articlesInfo);
     }, res);
@@ -57,4 +57,4 @@ app.post('/api/articles/:name/add-comments', (req, res) => {
 // app.post('/', (req,res) => res.send(`Hello ${req.body.name}`));
 // app.get('/hello/:name', (req,res) => res.send(`Hello ${req.params.name}`))
 
-app.listen(8000, () => console.log(`Server started at port ${PORT}`));
+app.listen(PORT, () => console.log(`Server started at port ${PORT}`));

@@ -7,6 +7,7 @@ import NotFound from "./NotFound";
 //Components
 import Articles from '../components/Articles';
 import CommentsList from "../components/CommentsList";
+import AddCommentForm from "../components/AddCommentForm";
 
 const Article = () => {
   const {name} = useParams();
@@ -36,6 +37,7 @@ const Article = () => {
           <p className="mx-auto leading-relaxed text-base mb-4" key={index}>{paragraph}</p>
         ))}
         <CommentsList comments={articleInfo.comments}/>
+        <AddCommentForm articleName={name} setArticleInfo={setArticleInfo}/>
         <h1 className="sm:text-2xl font-bold my-4 text-gray-900">Other Articles</h1>
         <div className="flex flex-wrap -m-4">
           <Articles articles={otherArticles}/>
