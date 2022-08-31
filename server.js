@@ -3,8 +3,6 @@ const app = express();
 const { MongoClient } = require("mongodb")
 const PORT = process.env.PORT || 8000;
 
-fetch
-
 // Middleware
 app.use(express.json({ extended: false }));
 

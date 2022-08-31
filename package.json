@@ -4,7 +4,9 @@
   "description": "Blog Website to learn MERN stack",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon"
+    "server": "nodemon server",
+    "my-app": "npm start --prefix my-app",
+    "dev": "concurrently \"npm run server\" \"npm run my-app\""
   },
   "keywords": [],
   "author": "Devi Sri Charan",
