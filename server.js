@@ -3,6 +3,11 @@ const app = express();
 const { MongoClient } = require("mongodb")
 const PORT = process.env.PORT || 8000;
 
+fetch
+
+// Middleware
+app.use(express.json({ extended: false }));
+
 const withDB = async (operation, res) => {
     try {
         const client = await MongoClient.connect('mongodb://localhost:27017');
@@ -13,9 +18,6 @@ const withDB = async (operation, res) => {
         res.status(500).json({ message: "Error connecting to database", error });
     }
 }
-
-// Middleware
-app.use(express.json({ extended: false }));
 
 app.get('/api/articles/:name', async (req, res) => {
     withDB(async (db) => {
